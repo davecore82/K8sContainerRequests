@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-dep2
+  name: my-dep2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-dep2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-dep2
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        resources:
+          requests:
+            cpu: "900m"
+            memory: "11Gi"
+status: {}
